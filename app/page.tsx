@@ -785,46 +785,79 @@ export default function Home() {
             </p>
           </div>
           <div className="mx-auto mt-16 max-w-7xl">
-            <div className="relative">
-              <div className="flex overflow-x-auto scrollbar-hide gap-6 pb-4">
-                {projects.map((project, index) => (
-                  <article key={index} className="flex-none w-96">
-                    <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg ring-1 ring-gray-900/5 dark:ring-white/10 overflow-hidden h-full">
-                      <div className="relative">
-                        <img
-                          src={project.image}
-                          alt={project.name}
-                          className="aspect-[16/9] w-full object-cover"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-                      </div>
-                      <div className="p-6">
-                        <div className="flex flex-wrap gap-2 mb-4">
-                          {project.tech.map((tech, techIndex) => (
-                            <span
-                              key={techIndex}
-                              className="inline-flex items-center rounded-full bg-primary-50 px-2.5 py-0.5 text-xs font-medium text-primary-700 dark:bg-primary-900/20 dark:text-primary-300"
-                            >
-                              {tech}
-                            </span>
-                          ))}
+            <div className="relative overflow-hidden">
+              {/* Marquee Container */}
+              <div className="flex gap-6">
+                {/* First set of projects */}
+                <div className="flex animate-marquee gap-6">
+                  {projects.map((project, index) => (
+                    <article key={`first-${index}`} className="flex-shrink-0 w-96">
+                      <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg ring-1 ring-gray-900/5 dark:ring-white/10 overflow-hidden h-full">
+                        <div className="relative">
+                          <img
+                            src={project.image}
+                            alt={project.name}
+                            className="aspect-[16/9] w-full object-cover"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                         </div>
-                        <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
-                          {project.name}
-                        </h3>
-                        <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                          {project.description}
-                        </p>
+                        <div className="p-6">
+                          <div className="flex flex-wrap gap-2 mb-4">
+                            {project.tech.map((tech, techIndex) => (
+                              <span
+                                key={techIndex}
+                                className="inline-flex items-center rounded-full bg-primary-50 px-2.5 py-0.5 text-xs font-medium text-primary-700 dark:bg-primary-900/20 dark:text-primary-300"
+                              >
+                                {tech}
+                              </span>
+                            ))}
+                          </div>
+                          <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+                            {project.name}
+                          </h3>
+                          <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                            {project.description}
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                  </article>
-                ))}
-              </div>
-              {/* Scroll indicators */}
-              <div className="flex justify-center mt-6 space-x-2">
-                {projects.map((_, index) => (
-                  <div key={index} className="w-2 h-2 rounded-full bg-gray-300 dark:bg-gray-600"></div>
-                ))}
+                    </article>
+                  ))}
+                </div>
+                {/* Second set of projects for seamless loop */}
+                <div className="flex animate-marquee gap-6">
+                  {projects.map((project, index) => (
+                    <article key={`second-${index}`} className="flex-shrink-0 w-96">
+                      <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg ring-1 ring-gray-900/5 dark:ring-white/10 overflow-hidden h-full">
+                        <div className="relative">
+                          <img
+                            src={project.image}
+                            alt={project.name}
+                            className="aspect-[16/9] w-full object-cover"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                        </div>
+                        <div className="p-6">
+                          <div className="flex flex-wrap gap-2 mb-4">
+                            {project.tech.map((tech, techIndex) => (
+                              <span
+                                key={techIndex}
+                                className="inline-flex items-center rounded-full bg-primary-50 px-2.5 py-0.5 text-xs font-medium text-primary-700 dark:bg-primary-900/20 dark:text-primary-300"
+                              >
+                                {tech}
+                              </span>
+                            ))}
+                          </div>
+                          <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+                            {project.name}
+                          </h3>
+                          <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                            {project.description}
+                          </p>
+                        </div>
+                      </div>
+                    </article>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
