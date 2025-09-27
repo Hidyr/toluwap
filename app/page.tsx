@@ -16,7 +16,7 @@ import {
   SparklesIcon,
   ChartBarIcon,
 } from '@heroicons/react/24/outline'
-import { siReact, siTypescript, siNextdotjs, siNodedotjs, siPython, siVuedotjs, siMongodb, siPostgresql, siDocker, siKubernetes, siRedis, siGraphql, siTailwindcss, siNestjs, siGo, siRubyonrails, siWebrtc, siStripe, siDatadog, siSupabase, siOpenai, siLangchain } from 'simple-icons'
+import { siReact, siTypescript, siNextdotjs, siNodedotjs, siPython, siVuedotjs, siMongodb, siPostgresql, siDocker, siKubernetes, siRedis, siGraphql, siTailwindcss, siNestjs, siGo, siRubyonrails, siWebrtc, siStripe, siDatadog, siSupabase, siOpenai, siLangchain, siGitlab } from 'simple-icons'
 // Custom social media icons
 const GithubIcon = (props: any) => (
   <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
@@ -94,8 +94,19 @@ const experiences = [
     achievements: [
       'Successfully integrated Magic Link authentication into the BBC iPlayer user onboarding flow, reducing friction for new users',
       'Enhanced platform security by implementing modern authentication protocols and user session management',
-      'Improved user experience by 35% through streamlined authentication process and reduced login abandonment rates',
-      'Collaborated with cross-functional teams to ensure seamless integration with existing BBC infrastructure and services',
+      'Improved user experience by 35% through streamlined authentication process and reduced login abandonment rates'
+    ],
+  },
+  {
+    title: 'Senior Full Stack Engineer',
+    company: 'Weseedo (Netherlands)',
+    period: 'May 2024 - Present',
+    description: 'Developing and maintaining features for the largest video conferencing platform in the Netherlands. Working on both frontend and backend systems to enhance user experience and platform scalability.',
+    achievements: [
+      'Developed critical video conferencing features that serve thousands of users daily across the Netherlands',
+      'Improved platform performance by 40% through optimized code and efficient database queries',
+      'Implemented real-time communication features using WebRTC and modern JavaScript frameworks',
+      'Enhanced system reliability by implementing comprehensive testing and monitoring solutions using Datadog'
     ],
   },
   {
@@ -170,13 +181,19 @@ const projects = [
   {
     name: 'BBC iPlayer - Authentication System',
     description: 'Implemented Magic Link authentication system for BBC iPlayer user onboarding flow, enhancing security and user experience with modern authentication protocols',
-    tech: ['TypeScript', 'AWS', 'Golang', 'React', 'Docker'],
+    tech: ['TypeScript', 'AWS', 'Node.js', 'Golang', 'React', 'Docker'],
     image: '/projects/bbc-iplayer.jpeg',
+  },
+  {
+    name: 'Weseedo Video Conferencing Platform',
+    description: 'Developed and maintained features for the largest video conferencing platform in the Netherlands, serving thousands of users with real-time communication capabilities',
+    tech: ['JavaScript', 'TypeScript', 'Node.js', 'Vue.js', 'Docker', 'GitLab'],
+    image: '/projects/weseedo.png',
   },
   {
     name: 'Qutii.org - Product Map Interface',
     description: 'Developed and improved product Map interface using React with TypeScript, implementing modern industry standards and search functionality',
-    tech: ['React', 'TypeScript', 'Next.js', 'AWS', 'Deck.gl'],
+    tech: ['React', 'TypeScript', 'Node.js', 'Next.js', 'AWS', 'Deck.gl'],
     image: '/projects/tiiqu.png',
   },
   {
@@ -255,6 +272,7 @@ const technologies = [
   { name: 'Supabase', logo: 'Supabase', icon: siSupabase },
   { name: 'OpenAI', logo: 'OpenAI', icon: siOpenai },
   { name: 'LangChain', logo: 'LangChain', icon: siLangchain },
+  { name: 'GitLab', logo: 'GitLab', icon: siGitlab },
   { name: 'Pinecone', logo: 'Pinecone', icon: pineconeIcon },
 ]
 
@@ -746,7 +764,7 @@ export default function Home() {
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-2xl lg:text-center">
               <p className="mt-2 text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl lg:text-balance dark:text-white">
-                My professional journey
+                Professional journey
               </p>
               <p className="mt-6 text-xl/8 text-gray-700 dark:text-gray-300">
                 Building innovative solutions and leading development teams across various industries. 
@@ -795,7 +813,7 @@ export default function Home() {
         <div id="projects" className="mx-auto max-w-7xl px-6 lg:px-8 py-24">
           <div className="mx-auto max-w-2xl lg:text-center">
             <p className="mt-2 text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl lg:text-balance dark:text-white">
-              My recent work
+              Recent works
             </p>
             <p className="mt-6 text-xl/8 text-gray-700 dark:text-gray-300">
               A showcase of projects that demonstrate my skills and passion for creating 
