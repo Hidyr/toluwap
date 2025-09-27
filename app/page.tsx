@@ -159,37 +159,31 @@ const projects = [
     name: 'Qutii.org - Product Map Interface',
     description: 'Developed and improved product Map interface using React with TypeScript, implementing modern industry standards and search functionality',
     tech: ['React', 'TypeScript', 'Next.js', 'AWS', 'Deck.gl'],
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+    image: '/projects/tiiqu.png',
   },
   {
     name: 'Tempo.io Roadmapping Platform',
     description: 'Boosted API scalability by designing client-facing API using NestJS framework with load testing tools and monitoring integration',
     tech: ['NestJS', 'TypeScript', 'AWS', 'Datadog', 'Grafana'],
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+    image: '/projects/tempo.png',
   },
   {
     name: 'Cucumber Test Prioritization Tool',
     description: 'Enhanced test reporting and analytics tools using React and Remix, scaling to support over 2 million data processing daily',
     tech: ['React', 'Remix', 'Golang', 'AWS', 'PostgreSQL'],
-    image: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+    image: '/projects/cucumber.png',
   },
   {
     name: 'IZEA Shakes Platform',
     description: 'Redesigned application with Ruby on Rails hotwired/turbo, implementing image enhancement algorithm and Stripe payment integration',
     tech: ['Ruby on Rails', 'JavaScript', 'Stripe', 'AWS', 'Docker'],
-    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-  },
-  {
-    name: 'Patricia Cryptocurrency Platform',
-    description: 'Implemented real-time cryptocurrency conversion and comprehensive design system with Figma and Tailwind CSS',
-    tech: ['React', 'Vue.js', 'TypeScript', 'Tailwind CSS', 'Cryptocurrency'],
-    image: 'https://images.unsplash.com/photo-1621761191319-c6fb62004040?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+    image: '/projects/izea.png',
   },
   {
     name: 'FutureX Learning Management System',
     description: 'Cutting-edge LMS with real-time communication features using WebRTC and Socket technologies, architected with microservices',
     tech: ['Vue.js', 'Node.js', 'WebRTC', 'AWS', 'Microservices'],
-    image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+    image: '/projects/futurex.png',
   },
 ]
 
