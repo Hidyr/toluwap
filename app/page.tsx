@@ -87,9 +87,21 @@ const skills = [
 
 const experiences = [
   {
+    title: 'Backend Engineer',
+    company: 'BBC (United Kingdom)',
+    period: 'Mar 2025 - Present',
+    description: 'Working as a Backend Engineer on BBC iPlayer, focusing on user onboarding flow integration and authentication systems. Implementation of Magic Link authentication to streamline user access and improve platform security.',
+    achievements: [
+      'Successfully integrated Magic Link authentication into the BBC iPlayer user onboarding flow, reducing friction for new users',
+      'Enhanced platform security by implementing modern authentication protocols and user session management',
+      'Improved user experience by 35% through streamlined authentication process and reduced login abandonment rates',
+      'Collaborated with cross-functional teams to ensure seamless integration with existing BBC infrastructure and services',
+    ],
+  },
+  {
     title: 'Senior Software Engineer (Frontend, Volunteer)',
     company: 'Tiiqu (United Kingdom)',
-    period: 'Mar 2024 - Present',
+    period: 'Mar 2024 - Jan 2025',
     description: 'Developed and improved product Map interface and user experience using React. Rearchitected the React framework to meet modern industry standards.',
     achievements: [
       'Improved product usability by implementing a search system that integrates with the product search map',
@@ -155,6 +167,12 @@ const experiences = [
 ]
 
 const projects = [
+  {
+    name: 'BBC iPlayer - Authentication System',
+    description: 'Implemented Magic Link authentication system for BBC iPlayer user onboarding flow, enhancing security and user experience with modern authentication protocols',
+    tech: ['TypeScript', 'AWS', 'Golang', 'React', 'Docker'],
+    image: '/projects/bbc-iplayer.jpeg',
+  },
   {
     name: 'Qutii.org - Product Map Interface',
     description: 'Developed and improved product Map interface using React with TypeScript, implementing modern industry standards and search functionality',
