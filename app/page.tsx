@@ -437,7 +437,7 @@ export default function Home() {
             <div className="mx-auto max-w-2xl text-center">
               <div className="mb-8">
                 <img
-                  src="/resume/profile-pic.png"
+                  src="/profile-pic.png"
                   alt="Toluwalope Bamidele"
                   className="mx-auto h-32 w-32 rounded-full object-cover ring-4 ring-white dark:ring-gray-800 shadow-xl"
                 />
@@ -579,7 +579,7 @@ export default function Home() {
           <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div className="mx-auto flex max-w-2xl flex-col gap-16 bg-white/75 px-6 py-16 shadow-lg ring-1 ring-gray-900/5 sm:rounded-3xl sm:p-8 lg:mx-0 lg:max-w-none lg:flex-row lg:items-center lg:py-20 xl:gap-x-20 xl:px-20 dark:bg-white/[0.03] dark:shadow-none dark:ring-white/10">
               <img
-                src="/resume/profile-pic.png"
+                src="/profile-pic.png"
                 alt="Toluwalope Bamidele"
                 className="h-96 w-full flex-none rounded-2xl object-cover shadow-none lg:aspect-square lg:h-auto lg:max-w-sm dark:shadow-xl"
               />
