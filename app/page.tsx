@@ -568,6 +568,151 @@ export default function Home() {
           </div>
         </div>
 
+        {/* Experience section */}
+        <div id="experience" className="py-24">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="mx-auto max-w-2xl lg:text-center">
+              <p className="mt-2 text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl lg:text-balance dark:text-white">
+                Professional journey
+              </p>
+              <p className="mt-6 text-xl/8 text-gray-700 dark:text-gray-300">
+                Building innovative solutions and leading development teams across various industries. 
+                A timeline of growth, achievements, and impact in software development.
+              </p>
+            </div>
+            <div className="mx-auto mt-16 max-w-7xl sm:mt-20 lg:mt-24">
+              <div className="relative">
+                <div className="flex overflow-x-auto scrollbar-hide gap-6 pb-4">
+                  {experiences.map((exp, index) => (
+                    <div key={index} className="flex-none w-80 md:w-1/2">
+                      <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg ring-1 ring-gray-900/5 dark:ring-white/10 p-8 h-full">
+                        <div className="flex items-center gap-x-4 text-sm mb-4">
+                          <time className="text-primary-600 dark:text-primary-400 font-semibold">{exp.period}</time>
+                          <div className="h-px flex-auto bg-gray-200 dark:bg-gray-700" />
+                        </div>
+                        <div className="mb-4">
+                          <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-1">{exp.title}</h3>
+                          <p className="text-lg text-gray-600 dark:text-gray-300 font-medium">{exp.company}</p>
+                        </div>
+                        <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">{exp.description}</p>
+                        <ul className="space-y-3">
+                          {exp.achievements.map((achievement, achIndex) => (
+                            <li key={achIndex} className="flex items-start gap-x-3 text-gray-600 dark:text-gray-300">
+                              <CheckIcon className="mt-1 h-5 w-5 flex-none text-primary-600 dark:text-primary-400" />
+                              <span className="text-sm leading-relaxed">{achievement}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                {/* Scroll indicators */}
+                <div className="flex justify-center mt-6 space-x-2">
+                  {experiences.map((_, index) => (
+                    <div key={index} className="w-2 h-2 rounded-full bg-gray-300 dark:bg-gray-600"></div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Technology Marquee section */}
+        <div className="py-24">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            {/* Marquee Container - Exact Supabase Style */}
+            <div className="mt-16 relative overflow-hidden">
+              {/* First Row */}
+              <div className="flex animate-marquee items-stretch gap-4 h-[120px]">
+                {[...technologies, ...technologies].map((tech, index) => (
+                  <div key={index} className="flex-shrink-0 flex items-center justify-center min-w-[250px]">
+                    <div className="group/panel relative rounded-lg md:rounded-xl p-px bg-gray-100 dark:bg-gray-800 bg-gradient-to-b from-gray-200 to-gray-300/50 dark:from-gray-700 dark:to-gray-600/50 transition-all hover:shadow-md flex items-center justify-center hover:bg-none hover:!bg-gray-300 dark:hover:!bg-gray-600 w-full md:w-[250px] h-full flex-grow">
+                      <div className="relative z-10 w-full h-full rounded-[7px] md:rounded-[11px] bg-white dark:bg-gray-900 overflow-hidden text-gray-600 dark:text-gray-400 flex items-center justify-center">
+                        <div className="flex items-center gap-3 opacity-50 group-hover/panel:opacity-75 transition-opacity">
+                          {tech.icon && (
+                            <svg
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill={`#${tech.icon.hex}`}
+                              className="flex-shrink-0"
+                            >
+                              <path d={tech.icon.path} />
+                            </svg>
+                          )}
+                          <span className="text-sm font-medium max-w-[140px] text-center">
+                            {tech.logo}
+                          </span>
+                        </div>
+                        <div className="absolute z-10 inset-0 w-full h-full pointer-events-none opacity-20"></div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              
+              {/* Second Row - Reverse direction */}
+              <div className="flex animate-marquee-reverse items-stretch gap-4 mt-4 h-[120px]">
+                {[...technologies.slice(8), ...technologies.slice(8)].map((tech, index) => (
+                  <div key={index} className="flex-shrink-0 flex items-center justify-center min-w-[250px]">
+                    <div className="group/panel relative rounded-lg md:rounded-xl p-px bg-gray-100 dark:bg-gray-800 bg-gradient-to-b from-gray-200 to-gray-300/50 dark:from-gray-700 dark:to-gray-600/50 transition-all hover:shadow-md flex items-center justify-center hover:bg-none hover:!bg-gray-300 dark:hover:!bg-gray-600 w-full md:w-[250px] h-full flex-grow">
+                      <div className="relative z-10 w-full h-full rounded-[7px] md:rounded-[11px] bg-white dark:bg-gray-900 overflow-hidden text-gray-600 dark:text-gray-400 flex items-center justify-center">
+                        <div className="flex items-center gap-3 opacity-50 group-hover/panel:opacity-75 transition-opacity">
+                          {tech.icon && (
+                            <svg
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill={`#${tech.icon.hex}`}
+                              className="flex-shrink-0"
+                            >
+                              <path d={tech.icon.path} />
+                            </svg>
+                          )}
+                          <span className="text-sm font-medium max-w-[140px] text-center">
+                            {tech.logo}
+                          </span>
+                        </div>
+                        <div className="absolute z-10 inset-0 w-full h-full pointer-events-none opacity-20"></div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              
+              {/* Third Row */}
+              <div className="flex animate-marquee items-stretch gap-4 mt-4 h-[120px]">
+                {[...technologies.slice(16), ...technologies.slice(16)].map((tech, index) => (
+                  <div key={index} className="flex-shrink-0 flex items-center justify-center min-w-[250px]">
+                    <div className="group/panel relative rounded-lg md:rounded-xl p-px bg-gray-100 dark:bg-gray-800 bg-gradient-to-b from-gray-200 to-gray-300/50 dark:from-gray-700 dark:to-gray-600/50 transition-all hover:shadow-md flex items-center justify-center hover:bg-none hover:!bg-gray-300 dark:hover:!bg-gray-600 w-full md:w-[250px] h-full flex-grow">
+                      <div className="relative z-10 w-full h-full rounded-[7px] md:rounded-[11px] bg-white dark:bg-gray-900 overflow-hidden text-gray-600 dark:text-gray-400 flex items-center justify-center">
+                        <div className="flex items-center gap-3 opacity-50 group-hover/panel:opacity-75 transition-opacity">
+                          {tech.icon && (
+                            <svg
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill={`#${tech.icon.hex}`}
+                              className="flex-shrink-0"
+                            >
+                              <path d={tech.icon.path} />
+                            </svg>
+                          )}
+                          <span className="text-sm font-medium max-w-[140px] text-center">
+                            {tech.logo}
+                          </span>
+                        </div>
+                        <div className="absolute z-10 inset-0 w-full h-full pointer-events-none opacity-20"></div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Values section */}
         <div className="mx-auto max-w-7xl px-6 lg:px-8 py-24">
           <div className="mx-auto max-w-2xl lg:text-center">
@@ -683,150 +828,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Technology Marquee section */}
-      <div className="py-24 sm:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          {/* Marquee Container - Exact Supabase Style */}
-          <div className="mt-16 relative overflow-hidden">
-            {/* First Row */}
-            <div className="flex animate-marquee items-stretch gap-4 h-[120px]">
-              {[...technologies, ...technologies].map((tech, index) => (
-                <div key={index} className="flex-shrink-0 flex items-center justify-center min-w-[250px]">
-                  <div className="group/panel relative rounded-lg md:rounded-xl p-px bg-gray-100 dark:bg-gray-800 bg-gradient-to-b from-gray-200 to-gray-300/50 dark:from-gray-700 dark:to-gray-600/50 transition-all hover:shadow-md flex items-center justify-center hover:bg-none hover:!bg-gray-300 dark:hover:!bg-gray-600 w-full md:w-[250px] h-full flex-grow">
-                    <div className="relative z-10 w-full h-full rounded-[7px] md:rounded-[11px] bg-white dark:bg-gray-900 overflow-hidden text-gray-600 dark:text-gray-400 flex items-center justify-center">
-                      <div className="flex items-center gap-3 opacity-50 group-hover/panel:opacity-75 transition-opacity">
-                        {tech.icon && (
-                          <svg
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill={`#${tech.icon.hex}`}
-                            className="flex-shrink-0"
-                          >
-                            <path d={tech.icon.path} />
-                          </svg>
-                        )}
-                        <span className="text-sm font-medium max-w-[140px] text-center">
-                          {tech.logo}
-                        </span>
-                      </div>
-                      <div className="absolute z-10 inset-0 w-full h-full pointer-events-none opacity-20"></div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-            
-            {/* Second Row - Reverse direction */}
-            <div className="flex animate-marquee-reverse items-stretch gap-4 mt-4 h-[120px]">
-              {[...technologies.slice(8), ...technologies.slice(8)].map((tech, index) => (
-                <div key={index} className="flex-shrink-0 flex items-center justify-center min-w-[250px]">
-                  <div className="group/panel relative rounded-lg md:rounded-xl p-px bg-gray-100 dark:bg-gray-800 bg-gradient-to-b from-gray-200 to-gray-300/50 dark:from-gray-700 dark:to-gray-600/50 transition-all hover:shadow-md flex items-center justify-center hover:bg-none hover:!bg-gray-300 dark:hover:!bg-gray-600 w-full md:w-[250px] h-full flex-grow">
-                    <div className="relative z-10 w-full h-full rounded-[7px] md:rounded-[11px] bg-white dark:bg-gray-900 overflow-hidden text-gray-600 dark:text-gray-400 flex items-center justify-center">
-                      <div className="flex items-center gap-3 opacity-50 group-hover/panel:opacity-75 transition-opacity">
-                        {tech.icon && (
-                          <svg
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill={`#${tech.icon.hex}`}
-                            className="flex-shrink-0"
-                          >
-                            <path d={tech.icon.path} />
-                          </svg>
-                        )}
-                        <span className="text-sm font-medium max-w-[140px] text-center">
-                          {tech.logo}
-                        </span>
-                      </div>
-                      <div className="absolute z-10 inset-0 w-full h-full pointer-events-none opacity-20"></div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-            
-            {/* Third Row */}
-            <div className="flex animate-marquee items-stretch gap-4 mt-4 h-[120px]">
-              {[...technologies.slice(16), ...technologies.slice(16)].map((tech, index) => (
-                <div key={index} className="flex-shrink-0 flex items-center justify-center min-w-[250px]">
-                  <div className="group/panel relative rounded-lg md:rounded-xl p-px bg-gray-100 dark:bg-gray-800 bg-gradient-to-b from-gray-200 to-gray-300/50 dark:from-gray-700 dark:to-gray-600/50 transition-all hover:shadow-md flex items-center justify-center hover:bg-none hover:!bg-gray-300 dark:hover:!bg-gray-600 w-full md:w-[250px] h-full flex-grow">
-                    <div className="relative z-10 w-full h-full rounded-[7px] md:rounded-[11px] bg-white dark:bg-gray-900 overflow-hidden text-gray-600 dark:text-gray-400 flex items-center justify-center">
-                      <div className="flex items-center gap-3 opacity-50 group-hover/panel:opacity-75 transition-opacity">
-                        {tech.icon && (
-                          <svg
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill={`#${tech.icon.hex}`}
-                            className="flex-shrink-0"
-                          >
-                            <path d={tech.icon.path} />
-                          </svg>
-                        )}
-                        <span className="text-sm font-medium max-w-[140px] text-center">
-                          {tech.logo}
-                        </span>
-                      </div>
-                      <div className="absolute z-10 inset-0 w-full h-full pointer-events-none opacity-20"></div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Experience section */}
-        <div id="experience" className="bg-gray-50 dark:bg-gray-800/50 py-24">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="mx-auto max-w-2xl lg:text-center">
-              <p className="mt-2 text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl lg:text-balance dark:text-white">
-                Professional journey
-              </p>
-              <p className="mt-6 text-xl/8 text-gray-700 dark:text-gray-300">
-                Building innovative solutions and leading development teams across various industries. 
-                A timeline of growth, achievements, and impact in software development.
-              </p>
-            </div>
-            <div className="mx-auto mt-16 max-w-7xl sm:mt-20 lg:mt-24">
-              <div className="relative">
-                <div className="flex overflow-x-auto scrollbar-hide gap-6 pb-4">
-                  {experiences.map((exp, index) => (
-                    <div key={index} className="flex-none w-80 md:w-1/2">
-                      <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg ring-1 ring-gray-900/5 dark:ring-white/10 p-8 h-full">
-                        <div className="flex items-center gap-x-4 text-sm mb-4">
-                          <time className="text-primary-600 dark:text-primary-400 font-semibold">{exp.period}</time>
-                          <div className="h-px flex-auto bg-gray-200 dark:bg-gray-700" />
-                        </div>
-                        <div className="mb-4">
-                          <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-1">{exp.title}</h3>
-                          <p className="text-lg text-gray-600 dark:text-gray-300 font-medium">{exp.company}</p>
-                        </div>
-                        <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">{exp.description}</p>
-                        <ul className="space-y-3">
-                          {exp.achievements.map((achievement, achIndex) => (
-                            <li key={achIndex} className="flex items-start gap-x-3 text-gray-600 dark:text-gray-300">
-                              <CheckIcon className="mt-1 h-5 w-5 flex-none text-primary-600 dark:text-primary-400" />
-                              <span className="text-sm leading-relaxed">{achievement}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                {/* Scroll indicators */}
-                <div className="flex justify-center mt-6 space-x-2">
-                  {experiences.map((_, index) => (
-                    <div key={index} className="w-2 h-2 rounded-full bg-gray-300 dark:bg-gray-600"></div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
         {/* Projects section */}
         <div id="projects" className="mx-auto max-w-7xl px-6 lg:px-8 py-24">
