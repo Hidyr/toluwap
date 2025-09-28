@@ -87,17 +87,6 @@ const skills = [
 
 const experiences = [
   {
-    title: 'Backend Engineer',
-    company: 'BBC (United Kingdom)',
-    period: 'Mar 2025 - Present',
-    description: 'Working as a Backend Engineer on BBC iPlayer, focusing on user onboarding flow integration and authentication systems. Implementation of Magic Link authentication to streamline user access and improve platform security.',
-    achievements: [
-      'Successfully integrated Magic Link authentication into the BBC iPlayer user onboarding flow, reducing friction for new users',
-      'Enhanced platform security by implementing modern authentication protocols and user session management',
-      'Improved user experience by 35% through streamlined authentication process and reduced login abandonment rates'
-    ],
-  },
-  {
     title: 'Senior Full Stack Engineer',
     company: 'Weseedo (Netherlands)',
     period: 'May 2024 - Present',
@@ -107,6 +96,30 @@ const experiences = [
       'Improved platform performance by 40% through optimized code and efficient database queries',
       'Implemented real-time communication features using WebRTC and modern JavaScript frameworks',
       'Enhanced system reliability by implementing comprehensive testing and monitoring solutions using Datadog'
+    ],
+  },
+  {
+    title: 'Full Stack Developer & Open Source Contributor',
+    company: 'Backend2Lab (Open Source)',
+    period: 'Aug 2025 - Present',
+    description: 'Developed Backend2Lab, an interactive learning platform for backend development that combines labs, exercises, and a code playground for beginners to practice backend concepts in a real Node.js environment.',
+    achievements: [
+      'Developed and maintained a full-stack learning platform serving developers worldwide with hands-on backend education',
+      'Architected microservices architecture using Go backend and React frontend with TypeScript for type safety',
+      'Implemented Docker containerization for seamless development and deployment across different environments',
+      'Created interactive code playground allowing users to practice backend concepts directly in the browser',
+      'Collaborated with 8+ contributors to maintain and enhance the open-source learning platform'
+    ],
+  },
+  {
+    title: 'Backend Engineer',
+    company: 'BBC (United Kingdom)',
+    period: 'Mar 2025 - July 2025',
+    description: 'Working as a Backend Engineer on BBC iPlayer, focusing on user onboarding flow integration and authentication systems. Implementation of Magic Link authentication to streamline user access and improve platform security.',
+    achievements: [
+      'Successfully integrated Magic Link authentication into the BBC iPlayer user onboarding flow, reducing friction for new users',
+      'Enhanced platform security by implementing modern authentication protocols and user session management',
+      'Improved user experience by 35% through streamlined authentication process and reduced login abandonment rates'
     ],
   },
   {
@@ -189,6 +202,12 @@ const projects = [
     description: 'Developed and maintained features for the largest video conferencing platform in the Netherlands, serving thousands of users with real-time communication capabilities',
     tech: ['JavaScript', 'TypeScript', 'Node.js', 'Vue.js', 'Docker', 'GitLab'],
     image: '/projects/weseedo.png',
+  },
+  {
+    name: 'Backend2Lab - Interactive Learning Platform',
+    description: 'Open-source interactive learning platform for backend development combining labs, exercises, and code playground for beginners to practice backend concepts in real Node.js environment',
+    tech: ['Go', 'React', 'TypeScript', 'Node.js', 'Docker', 'JavaScript'],
+    image: '/projects/b2lab.png',
   },
   {
     name: 'Qutii.org - Product Map Interface',
