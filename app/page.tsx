@@ -301,6 +301,49 @@ function classNames(...classes: string[]) {
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [showSuccessModal, setShowSuccessModal] = useState(false)
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  })
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }))
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      if (response.ok) {
+        setShowSuccessModal(true)
+        setFormData({ name: '', email: '', message: '' })
+      } else {
+        const errorData = await response.json()
+        alert(`Error: ${errorData.error || 'Failed to send message'}`)
+      }
+    } catch (error) {
+      console.error('Error sending message:', error)
+      alert('Failed to send message. Please try again.')
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
 
   return (
     <div className="bg-white dark:bg-gray-900">
@@ -1007,7 +1050,7 @@ export default function Home() {
           </div>
           <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none flex justify-center">
             <div className="w-3/4">
-              <form className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-900 dark:text-white">
                     Name
@@ -1016,6 +1059,9 @@ export default function Home() {
                     type="text"
                     name="name"
                     id="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    required
                     className="mt-2 block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary-600 dark:bg-gray-800 dark:text-white dark:ring-gray-600 dark:placeholder:text-gray-500 dark:focus:ring-primary-500"
                     placeholder="Your name"
                   />
@@ -1028,6 +1074,9 @@ export default function Home() {
                     type="email"
                     name="email"
                     id="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    required
                     className="mt-2 block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary-600 dark:bg-gray-800 dark:text-white dark:ring-gray-600 dark:placeholder:text-gray-500 dark:focus:ring-primary-500"
                     placeholder="your.email@example.com"
                   />
@@ -1040,15 +1089,19 @@ export default function Home() {
                     name="message"
                     id="message"
                     rows={4}
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    required
                     className="mt-2 block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary-600 dark:bg-gray-800 dark:text-white dark:ring-gray-600 dark:placeholder:text-gray-500 dark:focus:ring-primary-500"
                     placeholder="Tell me about your project..."
                   />
                 </div>
                 <button
                   type="submit"
-                  className="w-full rounded-md bg-primary-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 dark:bg-primary-500 dark:hover:bg-primary-400 dark:focus-visible:outline-primary-500 transition-colors"
+                  disabled={isSubmitting}
+                  className="w-full rounded-md bg-primary-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 dark:bg-primary-500 dark:hover:bg-primary-400 dark:focus-visible:outline-primary-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Send message
+                  {isSubmitting ? 'Sending...' : 'Send message'}
                 </button>
               </form>
             </div>
@@ -1067,6 +1120,42 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      {/* Success Modal */}
+      <Dialog open={showSuccessModal} onClose={setShowSuccessModal} className="relative z-50">
+        <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
+        <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
+          <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+            <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white dark:bg-gray-800 px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg sm:p-6">
+              <div className="sm:flex sm:items-start">
+                <div className="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-green-100 dark:bg-green-900/20 sm:mx-0 sm:h-10 sm:w-10">
+                  <CheckIcon className="h-6 w-6 text-green-600 dark:text-green-400" aria-hidden="true" />
+                </div>
+                <div className="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
+                  <Dialog.Title as="h3" className="text-base font-semibold leading-6 text-gray-900 dark:text-white">
+                    Message sent successfully!
+                  </Dialog.Title>
+                  <div className="mt-2">
+                    <p className="text-sm text-gray-500 dark:text-gray-400">
+                      Thank you for reaching out! I'll get back to you as soon as possible. 
+                      I appreciate your interest in working together.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="mt-5 sm:mt-4 sm:flex sm:flex-row-reverse">
+                <button
+                  type="button"
+                  className="inline-flex w-full justify-center rounded-md bg-primary-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-primary-500 sm:ml-3 sm:w-auto dark:bg-primary-500 dark:hover:bg-primary-400 transition-colors"
+                  onClick={() => setShowSuccessModal(false)}
+                >
+                  Got it
+                </button>
+              </div>
+            </Dialog.Panel>
+          </div>
+        </div>
+      </Dialog>
     </div>
   )
 }
