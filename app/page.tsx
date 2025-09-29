@@ -363,7 +363,7 @@ export default function Home() {
               className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 dark:text-gray-200"
             >
               <span className="sr-only">Open main menu</span>
-              <Bars3Icon aria-hidden="true" className="size-6" />
+              <Bars3Icon aria-hidden="true" className="size-8" />
             </button>
           </div>
           <div className="hidden lg:flex lg:gap-x-12">
@@ -400,7 +400,7 @@ export default function Home() {
                 className="-m-2.5 rounded-md p-2.5 text-gray-700 dark:text-gray-200"
               >
                 <span className="sr-only">Close menu</span>
-                <XMarkIcon aria-hidden="true" className="size-6" />
+                <XMarkIcon aria-hidden="true" className="size-8" />
               </button>
             </div>
             <div className="mt-6 flow-root">
@@ -641,7 +641,7 @@ export default function Home() {
                         <ul className="space-y-3">
                           {exp.achievements.map((achievement, achIndex) => (
                             <li key={achIndex} className="flex items-start gap-x-3 text-gray-600 dark:text-gray-300">
-                              <CheckIcon className="mt-1 h-5 w-5 flex-none text-primary-600 dark:text-primary-400" />
+                              <CheckIcon className="mt-1 h-6 w-6 flex-none text-primary-600 dark:text-primary-400" />
                               <span className="text-sm leading-relaxed">{achievement}</span>
                             </li>
                           ))}
@@ -772,7 +772,7 @@ export default function Home() {
               <dt className="inline font-semibold text-gray-900 dark:text-white">
                 <CodeBracketIcon
                   aria-hidden="true"
-                  className="absolute left-1 top-1 size-5 text-primary-600 dark:text-primary-500"
+                  className="absolute left-1 top-1 size-6 text-primary-600 dark:text-primary-500"
                 />
                 Clean Code First
               </dt>{' '}
@@ -782,7 +782,7 @@ export default function Home() {
               <dt className="inline font-semibold text-gray-900 dark:text-white">
                 <CheckIcon
                   aria-hidden="true"
-                  className="absolute left-1 top-1 size-5 text-primary-600 dark:text-primary-500"
+                  className="absolute left-1 top-1 size-6 text-primary-600 dark:text-primary-500"
                 />
                 User-Centric Design
               </dt>{' '}
@@ -792,7 +792,7 @@ export default function Home() {
               <dt className="inline font-semibold text-gray-900 dark:text-white">
                 <CloudIcon
                   aria-hidden="true"
-                  className="absolute left-1 top-1 size-5 text-primary-600 dark:text-primary-500"
+                  className="absolute left-1 top-1 size-6 text-primary-600 dark:text-primary-500"
                 />
                 Scalable Architecture
               </dt>{' '}
@@ -802,7 +802,7 @@ export default function Home() {
               <dt className="inline font-semibold text-gray-900 dark:text-white">
                 <ServerIcon
                   aria-hidden="true"
-                  className="absolute left-1 top-1 size-5 text-primary-600 dark:text-primary-500"
+                  className="absolute left-1 top-1 size-6 text-primary-600 dark:text-primary-500"
                 />
                 Performance Focused
               </dt>{' '}
@@ -812,7 +812,7 @@ export default function Home() {
               <dt className="inline font-semibold text-gray-900 dark:text-white">
                 <DevicePhoneMobileIcon
                   aria-hidden="true"
-                  className="absolute left-1 top-1 size-5 text-primary-600 dark:text-primary-500"
+                  className="absolute left-1 top-1 size-6 text-primary-600 dark:text-primary-500"
                 />
                 Cross-Platform
               </dt>{' '}
@@ -822,7 +822,7 @@ export default function Home() {
               <dt className="inline font-semibold text-gray-900 dark:text-white">
                 <SparklesIcon
                   aria-hidden="true"
-                  className="absolute left-1 top-1 size-5 text-primary-600 dark:text-primary-500"
+                  className="absolute left-1 top-1 size-6 text-primary-600 dark:text-primary-500"
                 />
                 AI-First Thinking
               </dt>{' '}
@@ -832,7 +832,7 @@ export default function Home() {
               <dt className="inline font-semibold text-gray-900 dark:text-white">
                 <EnvelopeIcon
                   aria-hidden="true"
-                  className="absolute left-1 top-1 size-5 text-primary-600 dark:text-primary-500"
+                  className="absolute left-1 top-1 size-6 text-primary-600 dark:text-primary-500"
                 />
                 Collaborative Spirit
               </dt>{' '}
@@ -859,7 +859,7 @@ export default function Home() {
                   <div key={skill.name} className="relative pl-16">
                     <dt className="text-base/7 font-semibold text-gray-900 dark:text-white">
                       <div className="absolute left-0 top-0 flex size-10 items-center justify-center rounded-lg bg-primary-600 dark:bg-primary-500">
-                        <skill.icon aria-hidden="true" className="size-6 text-white" />
+                        <skill.icon aria-hidden="true" className="size-8 text-white" />
                       </div>
                       {skill.name}
                     </dt>
@@ -986,28 +986,28 @@ export default function Home() {
                   <li className="flex gap-x-3">
                     <CheckIcon
                       aria-hidden="true"
-                      className="h-7 w-5 flex-none text-primary-500 dark:text-gray-200"
+                      className="h-8 w-6 flex-none text-primary-500 dark:text-gray-200"
                     />
                     Free consultation
                   </li>
                   <li className="flex gap-x-3">
                     <CheckIcon
                       aria-hidden="true"
-                      className="h-7 w-5 flex-none text-primary-500 dark:text-gray-200"
+                      className="h-8 w-6 flex-none text-primary-500 dark:text-gray-200"
                     />
                     Quick response time
                   </li>
                   <li className="flex gap-x-3">
                     <CheckIcon
                       aria-hidden="true"
-                      className="h-7 w-5 flex-none text-primary-500 dark:text-gray-200"
+                      className="h-8 w-6 flex-none text-primary-500 dark:text-gray-200"
                     />
                     Flexible engagement
                   </li>
                   <li className="flex gap-x-3">
                     <CheckIcon
                       aria-hidden="true"
-                      className="h-7 w-5 flex-none text-primary-500 dark:text-gray-200"
+                      className="h-8 w-6 flex-none text-primary-500 dark:text-gray-200"
                     />
                     Ongoing support
                   </li>
@@ -1129,7 +1129,7 @@ export default function Home() {
             <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white dark:bg-gray-800 px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg sm:p-6">
               <div className="sm:flex sm:items-start">
                 <div className="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-green-100 dark:bg-green-900/20 sm:mx-0 sm:h-10 sm:w-10">
-                  <CheckIcon className="h-6 w-6 text-green-600 dark:text-green-400" aria-hidden="true" />
+                  <CheckIcon className="h-8 w-8 text-green-600 dark:text-green-400" aria-hidden="true" />
                 </div>
                 <div className="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
                   <Dialog.Title as="h3" className="text-base font-semibold leading-6 text-gray-900 dark:text-white">
