@@ -760,7 +760,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8 py-24">
           <div className="mx-auto max-w-2xl lg:text-center">
             <p className="mt-2 text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl lg:text-balance dark:text-white">
-              My approach to development
+              Approach to development
             </p>
             <p className="mt-6 text-xl/8 text-gray-700 dark:text-gray-300">
               I believe in creating software that not only works but also makes a positive impact. 
